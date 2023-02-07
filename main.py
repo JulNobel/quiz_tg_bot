@@ -1,7 +1,4 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from user import User
 
 
 def print_hi(name):
@@ -9,8 +6,18 @@ def print_hi(name):
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
+def say_something(number: int, word: str):
+    word = word.capitalize()
+    return word * number
+
+
+def get_user_info(user: User) -> str:
+    return f'Возраст пользователя {user.name} - {user.age}, ' \
+           f'а email - {user.email}'
+
+
 if __name__ == '__main__':
     print_hi('Julia')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    print(say_something(4, 'Julia'))
+    user_1: User = User(42, 'Vasiliy', 23, 'vasya_pupkin@pochta.ru')
+    print(get_user_info(user_1))
