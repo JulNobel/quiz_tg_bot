@@ -1,5 +1,6 @@
 import time
-from token import BOT_TOKEN
+import pprint
+from bot_token import BOT_TOKEN
 
 from user import User
 import requests
@@ -7,7 +8,7 @@ import requests
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    pprint.pprint(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
 def say_something(number: int, word: str):
@@ -26,7 +27,7 @@ if __name__ == '__main__':
     user_1: User = User(42, 'Vasiliy', 23, 'vasya_pupkin@pochta.ru')
     print(get_user_info(user_1))
     api_url = 'http://jservice.io/api/random?count=1'
-    api_url = 'http://numbersapi.com/#43'
+    api_url = 'http://yesno.wtf/api'
 
     while True:
         try:
@@ -34,7 +35,6 @@ if __name__ == '__main__':
             break
         except:
             time.sleep(5)
-
 
     if response.status_code == 200:  # Если код ответа на запрос - 200, то смотрим, что пришло в ответе
         print(response.text)
